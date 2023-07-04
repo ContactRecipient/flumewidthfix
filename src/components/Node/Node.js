@@ -53,7 +53,7 @@ const Node = ({
           isOutput ? "input" : "output",
           cache
         );
-        const portHalf = fromRect.width / 2;
+        const portHalf = (fromRect && (fromRect.width || 200) || fromRect.width) / 2;
         let combined;
         if (isOutput) {
           combined = id + portName + output.nodeId + output.portName;
